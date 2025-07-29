@@ -18,7 +18,7 @@ export const Forecast = () => {
     return (
         <>
             {isExist(data) && (
-                <div>
+                <div className="columns-3 shadow-lg p-8 container mx-auto px-4">
                     {data?.forecast.forecastday.map((forecastDay, index) => (
                         <ForecastDay key={index} forecastDay={forecastDay} />
                     ))}

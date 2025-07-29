@@ -19,12 +19,22 @@ export const ForecastDay = ({ forecastDay }: ForecastDayProps) => {
     const dateString = adaptedDate.toLocaleString('en-US', dateOptions);
 
     return (
-        <div>
-            <div>{weekDayString}</div>
-            <span>{dateString}</span>
-            <span>{astro.sunrise}</span>
-            <span>{astro.sunset}</span>
-            <img src={day.condition.icon} alt="icon" />
+        <div className="flex flex-col shadow-lg p-8 flex-center">
+            <div>
+                <span className="text-sm mt-4">{weekDayString}</span>
+            </div>
+            <div>
+                <span className="font-bold text-lg mt-4">{dateString}</span>
+            </div>
+            <div className="mt-4">
+                <span>{astro.sunrise}</span>
+            </div>
+            <div className="mt-4">
+                <span>{astro.sunset}</span>
+            </div>
+            <div>
+                <img src={day.condition.icon} alt="icon" />
+            </div>
         </div>
     );
 };
