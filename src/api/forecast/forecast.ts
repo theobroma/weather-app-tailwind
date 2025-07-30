@@ -8,9 +8,9 @@ const lon = 33.3767724;
 const days = 3;
 
 export const loadForecast = async () => {
-    const { data } = await connectionClient.get(
-        `/forecast.json?q=${lat},${lon}&days=${days}`
-    );
+  const { data } = await connectionClient.get(
+    `/forecast.json?q=${lat},${lon}&days=${days}`,
+  );
 
-    return forecastResponseSchema.parse(data);
+  return forecastResponseSchema.parse(data);
 };
